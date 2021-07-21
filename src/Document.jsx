@@ -44,13 +44,13 @@ export default class Document extends PureComponent {
   }
 
   viewer = {
-    scrollPageIntoView: ({ pageNumber }) => {
+    scrollPageIntoView: ({ pageNumber, dest }) => {
       // Handling jumping to internal links target
       const { onItemClick } = this.props;
 
       // First, check if custom handling of onItemClick was provided
       if (onItemClick) {
-        onItemClick({ pageNumber });
+        onItemClick({ pageNumber, dest });
         return;
       }
 
